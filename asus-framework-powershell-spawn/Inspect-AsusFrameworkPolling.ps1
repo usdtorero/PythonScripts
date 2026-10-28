@@ -63,7 +63,7 @@ else {
     $matching = 0
     $candidateCount = 0
     $errors = 0
-    $days = @($cutoff.ToString('yyyyMMdd'), (Get-Date).ToString('yyyyMMdd') | Select-Object -Unique)
+    $days = @($cutoff.ToString('yyyyMMdd'); (Get-Date).ToString('yyyyMMdd'))
     foreach ($day in ($days | Select-Object -Unique)) {
         $folder = Join-Path $root $day
         if (-not (Test-Path -LiteralPath $folder)) { continue }
